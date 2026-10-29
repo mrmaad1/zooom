@@ -1,0 +1,53 @@
+{
+  "name": "zooom",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Zooom \u2014 free unlimited video meetings with end-to-end encrypted media. React + TypeScript + WebRTC.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"tsx watch src/server/index.ts --dev\" \"vite\"",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "start": "tsx src/server/index.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "smoke": "node scripts/smoke.mjs",
+    "dev:api": "tsx watch src/server/index.ts --dev",
+    "dev:web": "vite"
+  },
+  "dependencies": {
+    "@fastify/helmet": "^11.1.1",
+    "@fastify/static": "^7.0.4",
+    "@fastify/websocket": "^10.0.1",
+    "fastify": "^4.28.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.19.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "keywords": [
+    "webrtc",
+    "video-conferencing",
+    "e2ee",
+    "privacy",
+    "react",
+    "typescript",
+    "fastify",
+    "zoom-clone"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<your-username>/zooom.git"
+  }
+}

@@ -1,0 +1,20 @@
+# One-click signaling server + static app on Render (WebSockets supported).
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: zooom
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: MAX_PARTICIPANTS
+        value: "24"
+      - key: ALLOW_PUBLIC_STUN
+        value: "true"
+      # - key: TURN_URLS
+      #   value: turn:turn.example.com:3478
+      # - key: TURN_USERNAME
+      #   sync: false
+      # - key: TURN_CREDENTIAL
+      #   sync: false
